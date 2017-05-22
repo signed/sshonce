@@ -76,8 +76,8 @@ func main() {
 func promptForPassword() string {
 	fmt.Print("Enter Password: ")
 	bytePassword, err := terminal.ReadPassword(0)
-	if err == nil {
-		fmt.Println("\nPassword typed: " + string(bytePassword))
+	if err != nil {
+		panic("failed to read password")
 	}
 	return string(bytePassword)
 }
